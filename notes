@@ -5,8 +5,12 @@ Intro
 * what is the assumend background of the audience?
 
 * functional programming intro
-* mathematical intro? (cathegory theory)
+* mathematical intro? (category theory)
 
 
 Functors
 --------
+
+* informal description
+* formal description: Haskell notation + naturality property
+

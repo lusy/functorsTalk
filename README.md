@@ -1,0 +1,3 @@
+## Functors Talk
+
+This repo contains the outline and slides of the talk "Mapping Between Categories: On Functors in Functional Programming" taking place on the Geek Girl Meetup Berlin Tech Day July 2013

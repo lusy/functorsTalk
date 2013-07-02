@@ -2,6 +2,7 @@ The theory stuff
 ----------------
 
 Functor is a type class. Very much like Eq, Ord, Show, ...
+It requires a type constructor that takes *one* parameter
 >class  Functor    f   where
 >     fmap         ::   (a -> b) -> f a -> f b
 

@@ -4,6 +4,11 @@ Intro
 * how much introductory stuff should be there?
 * what is the assumend background of the audience?
 
+--> just ask:
+* how many people have already seen/done some functional programming?
+* how many of them are familiar with Haskell?
+* does anybody know what Functors are?
+
 * functional programming intro
 * mathematical intro? (category theory)
 
@@ -32,6 +37,10 @@ Functors (mathematics)
 
 Functors
 ========
+* what's the definition of the Functor type class
+
+* ok, let's give an example for an instance of that type class
+** List
 
 * informal description
 * formal description: Haskell notation + naturality property

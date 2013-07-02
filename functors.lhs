@@ -5,6 +5,15 @@ Functor is a type class. Very much like Eq, Ord, Show, ...
 >class  Functor    f   where
 >     fmap         ::   (a -> b) -> f a -> f b
 
+
+A functor example:
+Lists
+
+> map :: (a -> b) -> [a] -> [b]
+> instance Functor [] where
+>   fmap = map
+
+
 < fmap id           =  id
 < fmap (g . f)      =  fmap g . fmap f
 

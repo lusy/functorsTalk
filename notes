@@ -8,6 +8,15 @@ Intro
 * mathematical intro? (category theory)
 
 
+Why is functional programming awesome?
+
+* immutability - variables are immutable - no chance letting anyone overwrite something you needed;
+--> calling a function twice with the same arguments will always return the same result - there is no programm state we depend on; so it's much easier to understand and predict the behavior of the programm
+* concurrency - because of the immutability, it's not an issue letting several clients accessing the same data - they cannot tamper it anyway
+* first class functions - functions can be assigned to variables and passed as arguments to other functions
+* elegancy - problems which need loads of code in a procedural or object oriented language often solvable in very few lines of code
+
+
 Functors
 --------
 

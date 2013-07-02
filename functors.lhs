@@ -13,6 +13,26 @@ Lists
 > instance Functor [] where
 >   fmap = map
 
+Further examples (select one)
+
+Maybe
+-----
+> data Maybe x = Just x | Nothing
+
+> instance Functor Maybe where
+>   fmap f (Just x) = Just (f x)
+>   fmap f Nothing = Nothing
+
+
+Trees
+-----
+> data Tree x = Empty | Node x (Tree x) (Tree x)
+
+> instance Functor Tree where
+>   fmap f Empty = Empty
+>   fmap f (Node x left right) = Node (f x) (fmap f left) (fmap f right)
+
+
 
 < fmap id           =  id
 < fmap (g . f)      =  fmap g . fmap f

@@ -43,5 +43,7 @@ Functors
 ** List
 
 * informal description
+"Types that can act like a box can be functors. You can think of a list as a box that can be empty or have something inside it, including another box."
+-- from "Learn U a Haskell for Great Good"
 * formal description: Haskell notation + naturality property
 * example for characterizing alpha

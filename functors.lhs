@@ -7,6 +7,7 @@ The theory stuff
 < fmap id           =  id
 < fmap (g . f)      =  fmap g . fmap f
 
+Alpha is a "natural transformation" - a way to map one functor to another
 < alpha            ::  F a -> G a
 
 
@@ -21,6 +22,7 @@ The theory stuff
                alpha
 
 
+Parametricity
 < alpha . fmap f    =  fmap f . alpha
 
 

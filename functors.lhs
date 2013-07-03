@@ -3,8 +3,12 @@ The theory stuff
 
 Functor is a type class. Very much like Eq, Ord, Show, ...
 It requires a type constructor that takes *one* parameter
+
 >class  Functor    f   where
 >     fmap         ::   (a -> b) -> f a -> f b
+
+< fmap id           =  id
+< fmap (g . f)      =  fmap g . fmap f
 
 
 A functor example:
@@ -25,6 +29,8 @@ Maybe
 >   fmap f Nothing = Nothing
 
 
+> fmap (++ "ho") (Just "hey")
+
 Trees
 -----
 > data Tree x = Empty | Node x (Tree x) (Tree x)
@@ -34,10 +40,8 @@ Trees
 >   fmap f (Node x left right) = Node (f x) (fmap f left) (fmap f right)
 
 
-
-< fmap id           =  id
-< fmap (g . f)      =  fmap g . fmap f
-
+Mapping between functors
+------------------------
 Alpha is a "natural transformation" - a way to map one functor to another
 < alpha            ::  F a -> G a
 

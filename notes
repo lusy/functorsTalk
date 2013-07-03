@@ -27,13 +27,14 @@ Category theory in mathematics
 * mathematical abstraction
 * many areas could be represented as categories: sets, vector spaces, or types for computer science
 * there are mappings between them: an object can be "tranferred" from one category to another
-* mappings are structures preservent
-
+* mappings are structures preservent: we can "map" out data to another category and do some operations on it (because it's easier in this one)
 
 Functors (mathematics)
 ----------------------
 * "A functor associates to every object of one category an object of another category, and to every morphism in the first category a morphism in the second."
 * "Functors are structure preserving maps between categories" // this relates to the fmap function
+(I need a specific example for this later lists to trees or something like this)
+Motivation: why do we actually want to have functors?
 
 Functors
 ========
@@ -45,5 +46,5 @@ Functors
 * informal description
 "Types that can act like a box can be functors. You can think of a list as a box that can be empty or have something inside it, including another box."
 -- from "Learn U a Haskell for Great Good"
-* formal description: Haskell notation + naturality property
+* formal description: Haskell notation + naturality property + the natural transformation
 * example for characterizing alpha

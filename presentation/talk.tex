@@ -90,8 +90,96 @@
 
 \section{Haskell Functors}
 \begin{frame}
-    \frametitle{lala}
+    \frametitle{The Haskell Definition 2}
+    Functor is a type class. Very much like Eq, Ord, Show, ...
+    It requires a type constructor that takes *one* parameter
+
+    \begin{alltt}
+        > class  Functor    f   where \\
+        >       fmap         ::   (a $\to$ b) $\to$ f a $\to$ f b
+               \newline
+               \newline
+        fmap id           =  id \\
+        fmap (g . f)      =  fmap g . fmap f
+    \end{alltt}
 \end{frame}
+
+\begin{frame}
+    \frametitle{An Example - Lists}
+
+    \begin{alltt}
+        > map :: (a $\to$ b) $\to$ [a] $\to$ [b] \\
+        > instance Functor [] where \\
+        >   fmap = map
+    \end{alltt}
+
+    \begin{block}{Demo!}
+        \begin{alltt}
+            > fmap (2 +) [1,2,3]
+        \end{alltt}
+    \end{block}
+\end{frame}
+
+\begin{comment}
+Further examples
+
+Maybe
+-----
+> data Maybe x = Just x | Nothing
+
+> instance Functor Maybe where
+>   fmap f (Just x) = Just (f x)
+>   fmap f Nothing = Nothing
+
+
+> fmap (++ "ho") (Just "hey")
+
+Trees
+-----
+> data Tree x = Empty | Node x (Tree x) (Tree x)
+
+> instance Functor Tree where
+>   fmap f Empty = Empty
+>   fmap f (Node x left right) = Node (f x) (fmap f left) (fmap f right)
+\end{comment}
+
+\begin{frame}
+    \frametitle{You know this already!!}
+    % ruby / javascript examples
+\end{frame}
+
+\begin{frame}
+    \frametitle{The Natural Transformation}
+    % Mapping between functors
+\begin{alltt}
+    alpha            ::  F a -> G a
+
+
+               alpha\\
+         F A ---------> G A\\
+           |            |\\
+           |            |\\
+    fmap f |            | fmap f\\
+           |            |\\
+           v            v\\
+         F B ---------> G B\\
+               alpha
+
+
+Parametricity:\\
+alpha . fmap f    =  fmap f . alpha
+\end{alltt}
+\end{frame}
+
+
+
+\begin{frame}
+    \frametitle{The End...}
+    \begin{block}{Thanks!}
+        Questions?
+    \end{block}
+\end{frame}
+
 
 \section{The end..} % (fold)
 \begin{frame}

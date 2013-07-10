@@ -33,6 +33,9 @@
 \begin{frame}
      \frametitle{Introduction}
      % Find a picture to backup the introductory questions
+     %* how many people have already seen/done some functional programming?
+     %* how many of them are familiar with Haskell?
+     %* does anybody know what Functors are?
 \end{frame}
 
 \begin{frame}
@@ -92,7 +95,7 @@
 \begin{frame}
     \frametitle{The Haskell Definition 2}
     Functor is a type class. Very much like Eq, Ord, Show, ...
-    It requires a type constructor that takes *one* parameter
+    It requires a type constructor that takes \textbf{one} parameter
 
     \begin{alltt}
         > class  Functor    f   where \\
@@ -146,6 +149,18 @@ Trees
 \begin{frame}
     \frametitle{You know this already!!}
     % ruby / javascript examples
+    \begin{block}{Ruby}
+        \begin{alltt}
+            [1, 2, 3].map \{ |n| n * n \}
+            % do I put the answers in the slides?
+            % 2 slides for this instead of 1 --> with answers?
+        \end{alltt}
+    \end{block}
+    \begin{block}{Javascript}
+        \begin{alltt}
+            \_.map([1, 2, 3], function(num)\{return num*3;\});
+        \end{alltt}
+    \end{block}
 \end{frame}
 
 \begin{frame}
@@ -180,5 +195,14 @@ alpha . fmap f    =  fmap f . alpha
     \end{block}
 \end{frame}
 
+\section{Picture Sources}
+\begin{frame}
+    \frametitle{Some Sources}
+    \begin{itemize}
+        \item http://learnyouahaskell.com/
+        \item https://en.wikipedia.org/wiki/File:Dining\_philosophers.png
+        \item https://commons.wikimedia.org/wiki/File:Spreadsheet.png
+    \end{itemize}
+\end{frame}
 
 \end{document}

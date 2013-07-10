@@ -13,6 +13,7 @@
 
 \usepackage[percent]{overpic}
 \usepackage[footnotesize, bf]{caption}
+\usepackage[all]{xy}
 \input{theme.tex}
 \input{syntax}
 \renewcommand{\footnotesize}{\tiny}
@@ -41,8 +42,8 @@
 \begin{frame}
     \frametitle{Why is functional programming awesome?}
     \begin{itemize}
-        \item immutability
-        \item concurrency
+        \item immutability %excel picture
+        \item concurrency %dinning philosophers
         \item elegancy
         %\item first class functions
     \end{itemize}
@@ -166,24 +167,32 @@ Trees
 \begin{frame}
     \frametitle{The Natural Transformation}
     % Mapping between functors
-\begin{alltt}
-    alpha            ::  F a -> G a
-
-
-               alpha\\
-         F A ---------> G A\\
-           |            |\\
-           |            |\\
-    fmap f |            | fmap f\\
-           |            |\\
-           v            v\\
-         F B ---------> G B\\
-               alpha
-
-
-Parametricity:\\
-alpha . fmap f    =  fmap f . alpha
-\end{alltt}
+    \begin{equation*}
+           \xymatrix@C+2em@R+2em{
+              F(A) \ar[r]^{fmap\_f} \ar[d]_{\alpha_A} & F(B) \ar[d]^{\alpha_B} \\
+              G(A) \ar[r]_{fmap\_g} & G(B)
+             }
+    \end{equation*}
+%    \begin{comment}
+%    \begin{alltt}
+%    alpha            ::  F a -> G a
+%
+%
+%               alpha\\
+%         F A ---------> G A\\
+%           |            |\\
+%           |            |\\
+%    fmap f |            | fmap f\\
+%           |            |\\
+%           v            v\\
+%         F B ---------> G B\\
+%               alpha
+%
+%
+%Parametricity:\\
+%alpha . fmap f    =  fmap f . alpha
+%\end{alltt}
+%\end{comment}
 \end{frame}
 
 

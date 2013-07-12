@@ -2,6 +2,7 @@
 \usepackage{graphicx}
 \usepackage[ngerman]{babel}
 \usepackage[utf8]{inputenc}
+%\usepackage[T1]{fontenc}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{listings}
@@ -71,7 +72,7 @@
     \frametitle{Why is functional programming awesome?}
     \begin{block}{Concurrency}
         \begin{center}
-            \includegraphics[scale=0.3]{figures/Dining_philosophers.png}
+            \includegraphics[scale=0.3]{figures/DiningPhilosophers.png}
         \end{center}
     \end{block}
     % code example
@@ -112,25 +113,6 @@
     \end{block}
 \end{frame}
 
-
-\begin{frame}
-    \frametitle{Some Maths...}
-    What are categories in maths?
-    \begin{itemize}
-        \item sets
-        \item vector spaces
-        \item types in programming languages
-    \end{itemize}
-    %TODO pictures
-\end{frame}
-
-\begin{frame}
-    \frametitle{Some Maths 2...}
-    And we can map between these categories!
-    % pictures!
-    The mappings are structure preservent...
-\end{frame}
-
 \section{Functors Definition}
 \begin{frame}
     \frametitle{So what are functors?}
@@ -141,16 +123,22 @@
 \begin{frame}
     \frametitle{And what are they good for?}
     Motivation
-
-    %\begin{center}
-    %    \includegraphics[scale=0.35]{figures/IntroToLDA.png}
-    %\end{center}
 \end{frame}
 
 \begin{frame}
     \frametitle{The Haskell definition}
     ``Types that can act like a box can be functors. You can think of a list as a box that can be empty or have something inside it, including another box!''
-    %pictures!!
+    \vspace{30px}
+    \begin{columns}
+        \column{0.5\textwidth}
+            \begin{center}
+            \includegraphics[scale=0.4]{figures/list.png}
+            \end{center}
+        \column{0.5\textwidth}
+            \begin{center}
+            \includegraphics[scale=0.4]{figures/maybe.png}
+            \end{center}
+    \end{columns}
 \end{frame}
 
 \section{Haskell Functors}
@@ -162,11 +150,14 @@
     \begin{alltt}
         > class  Functor    f   where \\
         >       fmap         ::   (a $\to$ b) $\to$ f a $\to$ f b
-               \newline
-               \newline
-        fmap id           =  id \\
-        fmap (g . f)      =  fmap g . fmap f
+%               \newline
+%               \newline
+%        fmap id           =  id \\
+%        fmap (g . f)      =  fmap g . fmap f
     \end{alltt}
+    \begin{center}
+        \includegraphics[scale=0.4]{figures/fmapdef.png}
+    \end{center}
 \end{frame}
 
 \begin{frame}
@@ -179,9 +170,9 @@
     \end{alltt}
 
     \begin{block}{Demo!}
-        \begin{alltt}
-            > fmap (2 +) [1,2,3]
-        \end{alltt}
+%        \begin{alltt}
+%            > fmap (2 +) [1,2,3]
+%        \end{alltt}
     \end{block}
 \end{frame}
 
@@ -214,13 +205,22 @@ Trees
     \begin{block}{Ruby}
         \begin{alltt}
             [1, 2, 3].map \{ |n| n * n \}
-            % do I put the answers in the slides?
-            % 2 slides for this instead of 1 --> with answers?
+            \newline
+            \newline
+            => [1, 4, 9]
         \end{alltt}
     \end{block}
+\end{frame}
+
+\begin{frame}
+    \frametitle{You know this already!!}
+    % ruby / javascript examples
     \begin{block}{Javascript}
         \begin{alltt}
             \_.map([1, 2, 3], function(num)\{return num*3;\});
+            \newline
+            \newline
+            => [3, 6, 9]
         \end{alltt}
     \end{block}
 \end{frame}
@@ -228,32 +228,17 @@ Trees
 \begin{frame}
     \frametitle{The Natural Transformation}
     % Mapping between functors
-    \begin{equation*}
-           \xymatrix@C+2em@R+2em{
-              F(A) \ar[r]^{fmap\_f} \ar[d]_{\alpha_A} & F(B) \ar[d]^{\alpha_B} \\
-              G(A) \ar[r]_{fmap\_g} & G(B)
-             }
-    \end{equation*}
-%    \begin{comment}
-%    \begin{alltt}
-%    alpha            ::  F a -> G a
-%
-%
-%               alpha\\
-%         F A ---------> G A\\
-%           |            |\\
-%           |            |\\
-%    fmap f |            | fmap f\\
-%           |            |\\
-%           v            v\\
-%         F B ---------> G B\\
-%               alpha
-%
-%
-%Parametricity:\\
-%alpha . fmap f    =  fmap f . alpha
-%\end{alltt}
-%\end{comment}
+            \begin{equation*}
+                   \xymatrix@C+2em@R+2em{
+                      F(A) \ar[r]^{fmap\_f} \ar[d]_{\alpha_A} & F(B) \ar[d]^{\alpha_B} \\
+                      G(A) \ar[r]_{fmap\_g} & G(B)
+                     }
+            \end{equation*}
+
+%            $\alpha :: F a \ar G a$
+%            Parametricity:
+%            $\alpha . fmap\_f = fmap\_f . \alpha$
+
 \end{frame}
 
 
@@ -273,6 +258,7 @@ Trees
         \item \tiny{http://adit.io/posts/2013-04-17-functors,\_applicatives,\_and\_monads\_in\_pictures.html}
         \item \tiny{https://en.wikipedia.org/wiki/File:Dining\_philosophers.png}
         \item \tiny{https://commons.wikimedia.org/wiki/File:Spreadsheet.png}
+        \item \tiny{https://en.wikibooks.org/wiki/Algorithm\_Implementation/Sorting/Quicksort}
     \end{itemize}
 \end{frame}
 

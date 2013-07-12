@@ -37,18 +37,79 @@
      %* how many people have already seen/done some functional programming?
      %* how many of them are familiar with Haskell?
      %* does anybody know what Functors are?
+     \begin{center}
+         \includegraphics[scale=0.4]{figures/pickme.png}
+     \end{center}
+\end{frame}
+
+%\begin{comment}
+%\begin{frame}
+%    \frametitle{Why is functional programming awesome?}
+%    \begin{itemize}
+%        \item immutability %excel picture
+%        \item concurrency %dinning philosophers
+%        \item elegancy
+%        %\item first class functions
+%    \end{itemize}
+%    % code example
+%    % excel example for the immutability
+%\end{frame}
+%\ende{comment}
+
+\begin{frame}
+    \frametitle{Why is functional programming awesome?}
+    \begin{block}{Immutability}
+        \begin{center}
+            \includegraphics[scale=0.4]{figures/Spreadsheet.png}
+        \end{center}
+    \end{block}
+    % code example
+    % excel example for the immutability
 \end{frame}
 
 \begin{frame}
     \frametitle{Why is functional programming awesome?}
-    \begin{itemize}
-        \item immutability %excel picture
-        \item concurrency %dinning philosophers
-        \item elegancy
-        %\item first class functions
-    \end{itemize}
+    \begin{block}{Concurrency}
+        \begin{center}
+            \includegraphics[scale=0.3]{figures/Dining_philosophers.png}
+        \end{center}
+    \end{block}
     % code example
     % excel example for the immutability
+\end{frame}
+
+\begin{frame}
+    \frametitle{Why is functional programming awesome?}
+    \begin{block}{Elegancy}
+        \begin{block}{Haskell}
+                \begin{alltt}
+                    \begin{tiny}
+                    qsort :: Ord a => [a] -> [a]
+                    \newline
+                    qsort []     = []
+                    \newline
+                    qsort (x:xs) = qsort (filter (< x) xs) ++ [x] ++ qsort (filter (>= x) xs)
+                \end{tiny}
+                \end{alltt}
+        \end{block}
+        \begin{block}{Javascript}
+                \begin{alltt}
+                    \begin{tiny}
+                    function qsort(a) \{ \\
+                        if (a.length == 0) return []; \\
+
+                        var left = [], right = [], pivot = a[0];\\
+
+                        for (var i = 1; i < a.length; i++) \{ \\
+                            a[i] < pivot ? left.push(a[i]) : right.push(a[i]); \\
+                        \} \\
+
+                        return qsort(left).concat(pivot, qsort(right)); \\
+                    \}
+                    \end{tiny}
+                \end{alltt}
+        \end{block}
+    \end{block}
 \end{frame}
 
 

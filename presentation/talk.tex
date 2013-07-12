@@ -57,16 +57,16 @@
 %\end{frame}
 %\ende{comment}
 
-\begin{frame}
-    \frametitle{Why is functional programming awesome?}
-    \begin{block}{Immutability + Concurrency}
-        \begin{center}
-            \includegraphics[scale=0.4]{figures/Spreadsheet.png}
-        \end{center}
-    \end{block}
+%\begin{frame}
+%    \frametitle{Why is functional programming awesome?}
+%    \begin{block}{Immutability + Concurrency}
+%        \begin{center}
+%            \includegraphics[scale=0.4]{figures/Spreadsheet.png}
+%        \end{center}
+%    \end{block}
     % code example
     % excel example for the immutability
-\end{frame}
+%\end{frame}
 
 %\begin{frame}
 %    \frametitle{Why is functional programming awesome?}
@@ -79,48 +79,56 @@
     % excel example for the immutability
 %\end{frame}
 
+%\begin{frame}
+%    \frametitle{Why is functional programming awesome?}
+%    \begin{block}{Elegancy}
+%        \begin{block}{Haskell}
+%                \begin{alltt}
+%                    \begin{tiny}
+%                    qsort :: Ord a => [a] -> [a]
+%                    \newline
+%                    qsort []     = []
+%                    \newline
+%                    qsort (x:xs) = qsort (filter (< x) xs) ++ [x] ++ qsort (filter (>= x) xs)
+%                \end{tiny}
+%                \end{alltt}
+%        \end{block}
+%        \begin{block}{Javascript}
+%                \begin{alltt}
+%                    \begin{tiny}
+%                    function qsort(a) \{ \\
+%                        if (a.length == 0) return []; \\
+%
+%                        var left = [], right = [], pivot = a[0];\\
+%
+%                        for (var i = 1; i < a.length; i++) \{ \\
+%                            a[i] < pivot ? left.push(a[i]) : right.push(a[i]); \\
+%                        \} \\
+%
+%                        return qsort(left).concat(pivot, qsort(right)); \\
+%                    \}
+%                    \end{tiny}
+%                \end{alltt}
+%        \end{block}
+%    \end{block}
+%\end{frame}
+
 \begin{frame}
-    \frametitle{Why is functional programming awesome?}
-    \begin{block}{Elegancy}
-        \begin{block}{Haskell}
-                \begin{alltt}
-                    \begin{tiny}
-                    qsort :: Ord a => [a] -> [a]
-                    \newline
-                    qsort []     = []
-                    \newline
-                    qsort (x:xs) = qsort (filter (< x) xs) ++ [x] ++ qsort (filter (>= x) xs)
-                \end{tiny}
-                \end{alltt}
-        \end{block}
-        \begin{block}{Javascript}
-                \begin{alltt}
-                    \begin{tiny}
-                    function qsort(a) \{ \\
-                        if (a.length == 0) return []; \\
-
-                        var left = [], right = [], pivot = a[0];\\
-
-                        for (var i = 1; i < a.length; i++) \{ \\
-                            a[i] < pivot ? left.push(a[i]) : right.push(a[i]); \\
-                        \} \\
-
-                        return qsort(left).concat(pivot, qsort(right)); \\
-                    \}
-                    \end{tiny}
-                \end{alltt}
-        \end{block}
-    \end{block}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Category Theory}
+    \frametitle{Some Maths}
+        \begin{block}{Category Theory}
         \begin{itemize}
             \item mathematical abstraction
             \item categories are sets, vector spaces, or types for computer science..
-            \item there are mappings between them: an object can be ``tranferred'' from one category to another
-            \item  mappings are structures preservent: we can ``map'' out data to another category and do some operations on it (because it's easier in this one)
         \end{itemize}
+        \end{block}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Category Theory 2}
+    \begin{itemize}
+        \item there are mappings between them: an object can be ``tranferred'' from one category to another
+        \item  mappings are structures preservent%: we can ``map'' our data to another category and do some operations on it (because it's easier in this one)
+    \end{itemize}
 \end{frame}
 
 \section{Functors Definition}

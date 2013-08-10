@@ -4,4 +4,4 @@ This repo contains the outline and slides of the talk "Mapping Between Categorie
 
 ## Licence
 
-Look at [LICENCE.md] []
+Look at [LICENCE.md] (LICENCE.md)
